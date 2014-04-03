@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-# Author: nebulam87 (nebulam87@gmail.com) 
-# Version: 1.0 
+# Author: nebulam87 (nebulam87@linuxmail.org) 
+# Version: 1.0.1 
 
 import urllib
 import urllib2
