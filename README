@@ -11,7 +11,7 @@
 ##################################################	
 ##################################################
 
-Version: 1.0
+Version: 1.0.1
 Author: Rachel - NebulaM87 (nebulam87@linuxmail.org)
 
 This tool is simple: a search query is introduced as script parameter, and this uses the Bing search engine API to generate results, only that the script results are just links to websites related to the specified query.
