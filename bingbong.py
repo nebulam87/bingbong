@@ -11,18 +11,24 @@ import re
  
 def main():
 	if len(sys.argv)==2:
-		searchQuery = sys.argv[1]
-		bingResults = bing_search(searchQuery)
-		for line in bingResults:
-			line=str(line)
-			urls=re.findall(r'(https?://[^\s\'"<>]+)', line)
+		if str(sys.argv[1]) == "-h" or str(sys.argv[1]) == "--help":
+			print "Usage: " + str(sys.argv[0]) + " [your search]\n\n   If your search string contains spaces, quotes need to be added."
+			print "   Example: " + str(sys.argv[0]) + " \'cute cats\'\n"
+			exit(0)
+		else:
+			searchQuery = sys.argv[1]
+			bingResults = bing_search(searchQuery)
+			for line in bingResults:
+				line=str(line)
+				urls=re.findall(r'(https?://[^\s\'"<>]+)', line)
 		
 # Search and group as a raw string anything that starts as http(s?):// and followed by anything that is not a whitespace (\s) nor a quote or double-quote. It searches it on the string contained in variable "line"
 
-			if urls:
-				for i in urls:
-					if not "datamarket" in i:
-						print i 
+				if urls:
+					for i in urls:
+						if not "datamarket" in i:
+							print i	
+
 	else:
 		print "Usage: " + str(sys.argv[0]) + " [your search]\n\n   If your search string contains spaces, quotes need to be added."
 		print "   Example: " + str(sys.argv[0]) + " \'cute cats\'\n"
