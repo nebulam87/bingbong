@@ -1,0 +1,101 @@
+
+##################################################
+##################################################
+##						##
+##  |    _)             |                       ##
+##  __ \  | __ \   _` | __ \   _ \  __ \   _` | ##
+##  |   | | |   | (   | |   | (   | |   | (   | ##
+## _.__/ _|_|  _|\__, |_.__/ \___/ _|  _|\__, | ##
+##               |___/                   |___/  ##
+##						##
+##################################################	
+##################################################
+
+Version: 1.0
+Author: Rachel - NebulaM87 (nebulam87@linuxmail.org)
+
+This tool is simple: a search query is introduced as script parameter, and this uses the Bing search engine API to generate results, only that the script results are just links to websites related to the specified query.
+
+Usage example:
+
+~ # ./bingbong.py 'cute cats'
+
+http://www.cutecats.com/
+http://www.cutecats.com/cute-cats-p-2.html
+http://cutest-cats.tumblr.com/
+https://es-es.facebook.com/CatsCuteCat
+https://es-es.facebook.com/CatsCuteCat
+https://es-es.facebook.com/Cuteandfunnycatscorner
+https://es-es.facebook.com/Cuteandfunnycatscorner
+http://www.cutefunnycats.com/
+http://www.cute-cats.com/
+http://photobucket.com/images/cute%20cats
+https://es-la.facebook.com/Cuteandfunnycatscorner
+https://es-la.facebook.com/Cuteandfunnycatscorner
+http://www.youtube.com/watch?v=5k_LZbS5oig
+http://cutecat.com/
+http://cutegirlswithcats.tumblr.com/
+http://www.designzzz.com/cute-cats/
+http://stuffonmycat.com/
+(...)
+
+
+Complete output is not shown because the script returns up to 100 results. 
+
+To perform the search queries, a Bing API key needs to be added on the source code. In order to do this, open the script file using any text editor, and modify the following line:
+ 
+	bingkey = '[insert Bing API key here]'
+ 
+and replace [insert Bing API key here] with the key, keeping the quotes. If the API key is not included, the script will not work. If the error returned corresponds to the following:
+
+    "[!] Error: HTTP Error 401: The authorization type you provided is not supported. Only Basic and OAuth are supported"
+
+it means the API key is not correct or has not been added to the code.
+
+Any questions, suggestions or detected bugs, please contact me on the following e-mail address: nebulam87@linuxmail.org 
+
+
+Bing operators quick reference:
+
+    - site: Returns results within the given site
+
+    	Example: "NSA scandal" (site:bbc.co.uk OR site:cnn.com) 
+	# Looks for results related to "NSA scandal" within BBC and CNN sites.
+
+    - domain: Same as "site", but more thorough.
+
+	Example: domain:www.blueberry.com
+
+ 
+    - ext: Returns results containing documents which extension corresponds to the one given as value
+
+	Example: surfing ext:pdf
+	# Returns links to PDF Documents related to surfing
+ 
+    - feed: Locates feeds or RSS channels related to the given search term.
+
+    	Example: feed:cats
+
+
+    - filetype: Returns links to pages which file type corresponds to the given one. This is not the same as "ext" option.
+
+	Example: rfc filetype:txt
+	# Even if the extension is not .txt, the search engine will look for pages which file type is "text". 
+	Like http://www.w3.org/Protocols/rfc2109/rfc2109
+ 
+
+    - inbody: Looks for websites containing the search term on the metadata (<META tag>) or the <body> of the web page.
+
+	Example: inbody:"Powered by WordPress"
+
+ 
+    - intitle: Locates the given string on websites' <title> field
+
+	Example: intitle:"Index of" inbody:"Last modified"
+
+
+    - ip: Returns web sites located within the given IP address, as well as they are indexed on Bing.
+
+	Example: ip:217.76.128.220
+
+
