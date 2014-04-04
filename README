@@ -11,14 +11,39 @@
 ##################################################	
 ##################################################
 
-Version: 1.0.1
+Version: 1.1
 Author: Rachel - NebulaM87 (nebulam87@linuxmail.org)
 
 This tool is simple: a search query is introduced as script parameter, and this uses the Bing search engine API to generate results, only that the script results are just links to websites related to the specified query.
 
+Usage: bingbong.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -q <search query>, --query=<search query>
+                        Specify the search string to send to Bing
+  -f <file name>, --file=<file name>
+                        Specify the file from which to retrieve the search
+                        queries
+  -n <number of results>, --results=<number of results>
+                        Specify the number of results to be retrieved
+
+
+Version changes:
+
+1.0.0: First version.
+
+1.1.0:
+	- Added options parser and help (-h/--help) screen.
+	- Added option (-f) to parse a file containing a list of search strings.
+	- Added option (-n) to control how many results are retrieved. Default amount (if no -n option called) reduced to 50.
+	- Source code fully reviewed and improved.
+	- Added a simple banner :D
+
+
 Usage example:
 
-~ # ./bingbong.py 'cute cats'
+~ # ./bingbong.py -q 'cute cats'
 
 http://www.cutecats.com/
 http://www.cutecats.com/cute-cats-p-2.html
@@ -40,8 +65,6 @@ http://stuffonmycat.com/
 (...)
 
 
-Complete output is not shown because the script returns up to 100 results. 
-
 To perform the search queries, a Bing API key needs to be added on the source code. In order to do this, open the script file using any text editor, and modify the following line:
  
 	bingkey = '[insert Bing API key here]'
@@ -53,6 +76,87 @@ and replace [insert Bing API key here] with the key, keeping the quotes. If the 
 it means the API key is not correct or has not been added to the code.
 
 Any questions, suggestions or detected bugs, please contact me on the following e-mail address: nebulam87@linuxmail.org 
+
+
+Other examples of usage:
+
+# ~ ./bingbong.py -q 'inbody:"Powered by Wordpress" ' -n 10
+
+Retrieves 10 URL addresses (-n 10) that contain the string "Powered by Wordpress" (-q ...) on their <body> or <meta> tags. It means it is retrieving 10 potential Wordpress sites.
+
+-> Output:
+
+##################################################
+##################################################
+##                                              ##
+##  |    _)             |                       ##
+##  __ \  | __ \   _` | __ \   _ \  __ \   _` | ##
+##  |   | | |   | (   | |   | (   | |   | (   | ##
+## _.__/ _|_|  _|\__, |_.__/ \___/ _|  _|\__, | ##
+##               |___/                   |___/  ##
+##                                              ##
+##################################################
+##################################################
+  *                                               ***********
+  * Version 1.1                                             *
+  * For bug report and suggestions: nebulam87@linuxmail.org *
+  * Please check and download upgrades from:                *
+  *        https://github.com/nebulam87/bingbong            *
+  *                                                         *
+  ***********************************************************
+[>] Sending request with URL address: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27inbody%3A%22Powered%20by%20Wordpress%22%20%27&$top=10&$format=json
+
+http://www.poesia-castellana.com/
+http://www.chusdominguez.com/
+http://joanplanas.com/
+http://elmolinodeorbaneja.com/
+http://nosotrasdecidimos.org/
+http://www.viajarsindestino.com/
+http://www.librodeartista.info/
+http://www.desdebellaterra.com/
+http://rocktotal.com/
+http://mm-arquitectura.com/
+
+
+# ~ ./bingbong.py -q 'ip:86.109.162.20' -n 10
+
+It retrieves 10 URL addresses that are hosted in 86.109.162.20 and indexed in Google. 
+
+-> Output:
+
+##################################################
+##################################################
+##                                              ##
+##  |    _)             |                       ##
+##  __ \  | __ \   _` | __ \   _ \  __ \   _` | ##
+##  |   | | |   | (   | |   | (   | |   | (   | ##
+## _.__/ _|_|  _|\__, |_.__/ \___/ _|  _|\__, | ##
+##               |___/                   |___/  ##
+##                                              ##
+##################################################
+##################################################
+  *                                               ***********
+  * Version 1.1                                             *
+  * For bug report and suggestions: nebulam87@linuxmail.org *
+  * Please check and download upgrades from:                *
+  *        https://github.com/nebulam87/bingbong            *
+  *                                                         *
+  ***********************************************************
+[>] Sending request with URL address: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27ip%3A86.109.162.20%27&$top=10&$format=json
+
+http://gesticonta.net/
+http://arturojover.com/
+http://actividadesextraescolaresmadrid.es/
+http://www.herminiogonzalez.es/
+http://www.castrobergidum.com/
+http://comercialsanitaria.com/
+http://fincasviladecans.com/
+http://valledelcaudal.com/
+http://www.mirador900.com/
+http://cdinstal.com/
+
+
+
 
 
 Bing operators quick reference:
