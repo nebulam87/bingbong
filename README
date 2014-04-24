@@ -11,7 +11,7 @@
 ##################################################	
 ##################################################
 
-Version: 1.1
+Version: 1.2
 Author: Rachel - NebulaM87 (nebulam87@linuxmail.org)
 
 This tool is simple: a search query is introduced as script parameter, and this uses the Bing search engine API to generate results, only that the script results are just links to websites related to the specified query.
@@ -25,8 +25,6 @@ Options:
   -f <file name>, --file=<file name>
                         Specify the file from which to retrieve the search
                         queries
-  -n <number of results>, --results=<number of results>
-                        Specify the number of results to be retrieved
 
 
 Version changes:
@@ -40,29 +38,33 @@ Version changes:
 	- Source code fully reviewed and improved.
 	- Added a simple banner :D
 
+1.2.0:
+	- Removed option -n (number of results per query). It caused some problems and didn't really improve results list.
+	- Added functions to improve the quantity of results retrieved for a certain query up to 1000.
+	- General improvements in output format.	
 
 Usage example:
 
 ~ # ./bingbong.py -q 'cute cats'
 
+Query sent: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27cute cats%27&$top=50&$format=json&$skip=0
+   Searching...
+
+[+] 456 results found:
+
 http://www.cutecats.com/
-http://www.cutecats.com/cute-cats-p-2.html
 http://cutest-cats.tumblr.com/
 https://es-es.facebook.com/CatsCuteCat
-https://es-es.facebook.com/CatsCuteCat
-https://es-es.facebook.com/Cuteandfunnycatscorner
+http://www.youtube.com/watch?v=5k_LZbS5oig
 https://es-es.facebook.com/Cuteandfunnycatscorner
 http://www.cutefunnycats.com/
 http://www.cute-cats.com/
-http://photobucket.com/images/cute%20cats
+http://www.youtube.com/watch?v=_ZSbC09qgLI
 https://es-la.facebook.com/Cuteandfunnycatscorner
-https://es-la.facebook.com/Cuteandfunnycatscorner
-http://www.youtube.com/watch?v=5k_LZbS5oig
-http://cutecat.com/
-http://cutegirlswithcats.tumblr.com/
-http://www.designzzz.com/cute-cats/
-http://stuffonmycat.com/
 (...)
+
+
+Note: Bing will return more results if the value of "top" in the URL address is lower. It can be changed by changing the variable "topResults" within the source code. Minimum is 1 and maximum is 100. 
 
 
 To perform the search queries, a Bing API key needs to be added on the source code. In order to do this, open the script file using any text editor, and modify the following line:
@@ -80,7 +82,7 @@ Any questions, suggestions or detected bugs, please contact me on the following 
 
 Other examples of usage:
 
-# ~ ./bingbong.py -q 'inbody:"Powered by Wordpress" ' -n 10
+# ~ ./bingbong.py -q 'inbody:"Powered by Wordpress"
 
 Retrieves 10 URL addresses (-n 10) that contain the string "Powered by Wordpress" (-q ...) on their <body> or <meta> tags. It means it is retrieving 10 potential Wordpress sites.
 
