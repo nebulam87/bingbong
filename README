@@ -75,7 +75,6 @@ and replace [insert Bing API key here] with the key, keeping the quotes. If the 
 
     "[!] Error: HTTP Error 401: The authorization type you provided is not supported. Only Basic and OAuth are supported"
 
-it means the API key is not correct or has not been added to the code.
 
 Any questions, suggestions or detected bugs, please contact me on the following e-mail address: nebulam87@linuxmail.org 
 
@@ -84,7 +83,7 @@ Other examples of usage:
 
 # ~ ./bingbong.py -q 'inbody:"Powered by Wordpress"
 
-Retrieves 10 URL addresses (-n 10) that contain the string "Powered by Wordpress" (-q ...) on their <body> or <meta> tags. It means it is retrieving 10 potential Wordpress sites.
+Retrieves URL addresses that contain the string "Powered by Wordpress" (-q ...) on their <body> or <meta> tags. It means it is retrieving potential Wordpress sites.
 
 -> Output:
 
@@ -100,29 +99,37 @@ Retrieves 10 URL addresses (-n 10) that contain the string "Powered by Wordpress
 ##################################################
 ##################################################
   *                                               ***********
-  * Version 1.1                                             *
+  * Version 1.2                                             *
   * For bug report and suggestions: nebulam87@linuxmail.org *
   * Please check and download upgrades from:                *
   *        https://github.com/nebulam87/bingbong            *
   *                                                         *
   ***********************************************************
-[>] Sending request with URL address: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27inbody%3A%22Powered%20by%20Wordpress%22%20%27&$top=10&$format=json
+Query sent: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27inbody:"Powered by Wordpress"%27&$top=50&$format=json&$skip=0
+   Searching...
+
+[+] 930 results found:
 
 http://www.poesia-castellana.com/
+http://campingvalledeanso.net/
 http://www.chusdominguez.com/
 http://joanplanas.com/
 http://elmolinodeorbaneja.com/
-http://nosotrasdecidimos.org/
-http://www.viajarsindestino.com/
+http://villarrubiacf.es/
+http://redcanguro.org/
 http://www.librodeartista.info/
 http://www.desdebellaterra.com/
-http://rocktotal.com/
 http://mm-arquitectura.com/
+http://autoescuelacamponuevo.com/
+http://www.lacorchera.com/
+http://www.afrikislife.net/
+http://portaldelprado.com/
+(...)
 
 
-# ~ ./bingbong.py -q 'ip:86.109.162.20' -n 10
+# ~ ./bingbong.py -q 'ip:86.109.162.20'
 
-It retrieves 10 URL addresses that are hosted in 86.109.162.20 and indexed in Google. 
+It retrieves URL addresses that are hosted in 86.109.162.20 and indexed in Bing. 
 
 -> Output:
 
@@ -138,30 +145,33 @@ It retrieves 10 URL addresses that are hosted in 86.109.162.20 and indexed in Go
 ##################################################
 ##################################################
   *                                               ***********
-  * Version 1.1                                             *
+  * Version 1.2                                             *
   * For bug report and suggestions: nebulam87@linuxmail.org *
   * Please check and download upgrades from:                *
   *        https://github.com/nebulam87/bingbong            *
   *                                                         *
   ***********************************************************
-[>] Sending request with URL address: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27ip%3A86.109.162.20%27&$top=10&$format=json
+Query sent: https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27ip:86.109.162.20%27&$top=50&$format=json&$skip=0
+   Searching...
 
-http://gesticonta.net/
+[+] 219 results found:
+
 http://arturojover.com/
+http://www.castrobergidum.com/
 http://actividadesextraescolaresmadrid.es/
 http://www.herminiogonzalez.es/
-http://www.castrobergidum.com/
-http://comercialsanitaria.com/
+http://www.techosmovilesdemontilla.es/
+http://www.perezcubero.es/
 http://fincasviladecans.com/
+http://comercialsanitaria.com/
+http://angelodena.com/
+http://www.psp-informatica.com/
 http://valledelcaudal.com/
-http://www.mirador900.com/
-http://cdinstal.com/
+http://institutogrimalt.com/
+(...)
 
 
-
-
-
-Bing operators quick reference:
+# Bing operators quick reference:
 
     - site: Returns results within the given site
 
