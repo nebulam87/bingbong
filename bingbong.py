@@ -18,7 +18,6 @@ def bing_search(query, topValue, skipValue):
         credentials = (':%s' % bingkey).encode('base64')[:-1]
         auth = 'Basic %s' % credentials
         url = 'https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27'+query+'%27&$top='+str(topValue)+'&$format=json&$skip=' + str(skipValue)
-#	print "[>] Sending request with URL address: " + url + "\n"
 	request = urllib2.Request(url)
         request.add_header('Authorization', auth)
         request.add_header('User-Agent', userAgent)
