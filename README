@@ -12,7 +12,7 @@
 ##################################################
 
 Version: 1.2
-Author: Rachel - NebulaM87 (nebulam87@linuxmail.org)
+Author: Rachel - NebulaM87 (Twitter - @nebulam87)
 
 This tool is simple: a search query is introduced as script parameter, and this uses the Bing search engine API to generate results, only that the script results are just links to websites related to the specified query.
 
@@ -100,7 +100,7 @@ Retrieves URL addresses that contain the string "Powered by Wordpress" (-q ...) 
 ##################################################
   *                                               ***********
   * Version 1.2                                             *
-  * For bug report and suggestions: nebulam87@linuxmail.org *
+  * For bug report and suggestions: Twitter - @nebulam87    *
   * Please check and download upgrades from:                *
   *        https://github.com/nebulam87/bingbong            *
   *                                                         *
@@ -146,7 +146,7 @@ It retrieves URL addresses that are hosted in 86.109.162.20 and indexed in Bing.
 ##################################################
   *                                               ***********
   * Version 1.2                                             *
-  * For bug report and suggestions: nebulam87@linuxmail.org *
+  * For bug report and suggestions: Twitter - @nebulam87    *
   * Please check and download upgrades from:                *
   *        https://github.com/nebulam87/bingbong            *
   *                                                         *
