@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Author: nebulam87 (nebulam87@linuxmail.org) 
+# Author: nebulam87 (Twitter - @nebulam87) 
 # Version: 1.2.0 
 
 import urllib2
@@ -49,7 +49,7 @@ def main():
 	print "##################################################"
 	print "  *                                               ***********"
 	print "  * Version 1.2                                             *"
-	print "  * For bug report and suggestions: nebulam87@linuxmail.org *"
+	print "  * For bug report and suggestions: Twitter - @nebulam87    *"
 	print "  * Please check and download upgrades from:                *"
 	print "  *        https://github.com/nebulam87/bingbong            *"
 	print "  *                                                         *"
